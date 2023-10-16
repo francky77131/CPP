@@ -1,6 +1,6 @@
 #include "fixed.hpp"
 
-int	Fixed::_fract = 8;
+int const   Fixed::_fract = 8;
 
 Fixed::Fixed(void)
 {

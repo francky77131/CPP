@@ -15,7 +15,7 @@ public:
 	Fixed(float const f);
 	~Fixed(void);
 
-	Fixed&	operator=(Fixed const & egl);
+	Fixed&	operator=(Fixed const & rhs);
 	
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
@@ -24,8 +24,8 @@ public:
 
 private:
 
-	int			_value;
-	static int	_fract;
+	int					_value;
+	static int const	_fract;
 };
 
 std::ostream&	operator<<(std::ostream& o, Fixed const & a);
