@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/07 13:50:56 by frgojard          #+#    #+#              #
-#    Updated: 2023/11/07 13:50:57 by frgojard         ###   ########.fr        #
+#    Created: 2023/11/07 13:51:40 by frgojard          #+#    #+#              #
+#    Updated: 2023/11/07 13:51:41 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main Cat Dog Animal WrongCat WrongAnimal
+FILES		= main Cat Dog Animal WrongCat WrongAnimal Brain
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp
+HEADER		= Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m

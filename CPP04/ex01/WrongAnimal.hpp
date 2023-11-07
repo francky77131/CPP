@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 13:50:49 by frgojard          #+#    #+#             */
-/*   Updated: 2023/11/07 13:50:50 by frgojard         ###   ########.fr       */
+/*   Created: 2023/11/07 13:52:10 by frgojard          #+#    #+#             */
+/*   Updated: 2023/11/07 17:19:16 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
 
-class	Dog : public Animal
+class	WrongAnimal
 {
 	public:
-		Dog(void); //default constructor
-		Dog(Dog const & src); //copy constructor
-		Dog & operator=(Dog const & rhs); //copy assignment operator
-		~Dog(void); //destructor
+		WrongAnimal(void); //default constructor
+		WrongAnimal(WrongAnimal const & src); //copy constructor
+		WrongAnimal & operator=(WrongAnimal const & rhs); //copy assignment operator
+		~WrongAnimal(void); //destructor
 
 		void		makeSound(void) const;
-
-
+		std::string	getType(void) const;
 	protected:
+		std::string _type;
 	private:
 };
 

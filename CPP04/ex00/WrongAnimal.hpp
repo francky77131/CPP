@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/07 13:51:01 by frgojard          #+#    #+#             */
+/*   Updated: 2023/11/07 14:00:09 by frgojard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
@@ -12,7 +24,7 @@ class	WrongAnimal
 		WrongAnimal & operator=(WrongAnimal const & rhs); //copy assignment operator
 		~WrongAnimal(void); //destructor
 
-		virtual void		makeSound(void) const;
+		void		makeSound(void) const;
 		std::string	getType(void) const;
 	protected:
 		std::string _type;

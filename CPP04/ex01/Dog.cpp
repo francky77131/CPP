@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 13:50:44 by frgojard          #+#    #+#             */
-/*   Updated: 2023/11/07 13:50:45 by frgojard         ###   ########.fr       */
+/*   Created: 2023/11/07 13:51:32 by frgojard          #+#    #+#             */
+/*   Updated: 2023/11/07 13:51:33 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Dog::Dog(void)
 {
 	std::cout << "Dog Default constructor called" << std::endl;
 	this->_type = "Dog";
+	_braindog = new Brain();
 	return ;
 }
 
@@ -38,12 +39,19 @@ Dog & Dog::operator=(Dog const & rhs)
 	if (this != &rhs)
 	{
 		this->_type = rhs._type;
+		_braindog = new Brain(*rhs._braindog);
 	}
 	return (*this);
+}
+
+Brain*	Dog::get_brain(void) const
+{
+	return (this->_braindog);
 }
 
 Dog::~Dog(void)
 {
 	std::cout << "Dog Destructor called" << std::endl;
+	delete _braindog;
 	return ;
 }

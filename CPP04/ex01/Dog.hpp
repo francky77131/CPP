@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 13:50:49 by frgojard          #+#    #+#             */
-/*   Updated: 2023/11/07 13:50:50 by frgojard         ###   ########.fr       */
+/*   Created: 2023/11/07 13:51:34 by frgojard          #+#    #+#             */
+/*   Updated: 2023/11/07 14:40:11 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class	Dog : public Animal
 {
@@ -25,11 +26,11 @@ class	Dog : public Animal
 		Dog & operator=(Dog const & rhs); //copy assignment operator
 		~Dog(void); //destructor
 
-		void		makeSound(void) const;
+		void	makeSound(void) const;
+		Brain*	get_brain(void) const;
 
-
-	protected:
 	private:
+		Brain	*_braindog;
 };
 
 #endif

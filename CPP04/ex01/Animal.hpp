@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 13:50:49 by frgojard          #+#    #+#             */
-/*   Updated: 2023/11/07 13:50:50 by frgojard         ###   ########.fr       */
+/*   Created: 2023/11/07 13:51:12 by frgojard          #+#    #+#             */
+/*   Updated: 2023/11/07 13:51:13 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
 
-class	Dog : public Animal
+class	Animal
 {
 	public:
-		Dog(void); //default constructor
-		Dog(Dog const & src); //copy constructor
-		Dog & operator=(Dog const & rhs); //copy assignment operator
-		~Dog(void); //destructor
+		Animal(void); //default constructor
+		Animal(Animal const & src); //copy constructor
+		Animal & operator=(Animal const & rhs); //copy assignment operator
+		virtual ~Animal(void); //destructor
 
-		void		makeSound(void) const;
-
-
+		virtual void		makeSound(void) const;
+		std::string	getType(void) const;
 	protected:
+		std::string _type;
 	private:
 };
 
