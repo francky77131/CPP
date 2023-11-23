@@ -3,18 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:06:31 by frgojard          #+#    #+#             */
-/*   Updated: 2023/11/22 15:06:31 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:25:04 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(void) : _name("Random"), _grade(1)
 {
 	std::cout << "Bureaucrat Default constructor called" << std::endl;
+	if (_grade > 150)
+		throw GradeTooLowException();
+	if (_grade < 1)
+		throw GradeTooHighException();
+	return ;
+}
+
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+{
+	std::cout << "Bureaucrat Parametric constructor called" << std::endl;
+	if (_grade > 150)
+		throw GradeTooLowException();
+	if (_grade < 1)
+		throw GradeTooHighException();
 	return ;
 }
 
@@ -25,12 +39,22 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src)
 	return ;
 }
 
+int	Bureaucrat::getGrade(void) const
+{
+	return (this->_grade);
+}
+
+std::string Bureaucrat::getName(void) const
+{
+	return (this->_name);
+}
+
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 {
 	std::cout << "Bureaucrat Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
-
+		this->_grade = rhs.getGrade();
 	}
 	return (*this);
 }
@@ -43,5 +67,7 @@ Bureaucrat::~Bureaucrat(void)
 
 std::ostream&   operator<<(std::ostream& o, Bureaucrat const & a)
 {
+	o << a.getName() << std::endl;
+	o << "bureaucrat grade " << a.getGrade() << std::endl;
 	return (o);
 }

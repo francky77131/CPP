@@ -6,11 +6,11 @@
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:50:56 by frgojard          #+#    #+#              #
-#    Updated: 2023/11/22 15:06:54 by frgojard         ###   ########.fr        #
+#    Updated: 2023/11/23 12:25:00 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Animal
+NAME		= Bureaucrat
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
