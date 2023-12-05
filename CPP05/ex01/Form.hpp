@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:11:12 by frgojard          #+#    #+#             */
-/*   Updated: 2023/11/24 15:32:27 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/12/05 21:05:33 by franckgojar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <string>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class	Form
 {
@@ -24,13 +27,27 @@ class	Form
 		Form & operator=(Form const & rhs); //copy assignment operator
 		~Form(void); //destructor
 
+		std::string	getName(void) const;
+		int 	getGradeToSign(void) const;
+		int 	getGradeToExecute(void) const;
+		bool	getSigned(void) const;
+		void	beSigned(Bureaucrat &b);
+
 		class GradeTooHighException : public std::exception
 		{
 			public :
 				virtual const char* what() const throw()
 				{
-					return ("Grade to high")
-				}	
+					return ("Form Grade to high");
+				}
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public :
+				virtual const char* what() const throw()
+				{
+					return ("Form Grade to low");
+				}
 		};
 
 	protected:

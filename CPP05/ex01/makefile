@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
+#    By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:50:56 by frgojard          #+#    #+#              #
-#    Updated: 2023/11/23 12:25:00 by frgojard         ###   ########.fr        #
+#    Updated: 2023/12/05 20:52:29 by franckgojar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main Bureaucrat
+FILES		= main Bureaucrat Form
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Bureaucrat.hpp
+HEADER		= Bureaucrat.hpp Form.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m
