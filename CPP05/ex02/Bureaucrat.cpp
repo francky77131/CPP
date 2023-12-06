@@ -6,7 +6,7 @@
 /*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:06:31 by frgojard          #+#    #+#             */
-/*   Updated: 2023/12/05 20:23:14 by franckgojar      ###   ########.fr       */
+/*   Updated: 2023/12/06 20:33:47 by franckgojar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,19 @@ void Bureaucrat::decrementGrade(void)
 	return ;
 }
 
+void	Bureaucrat::signForm(AForm const & f)
+{
+	if (f.getSigned() == true)
+		std::cout << _name << " signed " << f.getName() << std::endl;
+	else if ((f.getSigned() == false) || f.getGradeToSign() < getGrade())
+		std::cout << _name << " couldn't signed " << f.getName() << " because grade to low" << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	form.execute(*this);
+}
+
 Bureaucrat::~Bureaucrat(void)
 {
 	std::cout << "Bureaucrat Destructor called" << std::endl;
@@ -83,7 +96,7 @@ Bureaucrat::~Bureaucrat(void)
 
 std::ostream&   operator<<(std::ostream& o, Bureaucrat const & a)
 {
-	o << a.getName() << std::endl;
-	o << "bureaucrat grade " << a.getGrade() << std::endl;
+	o << a.getName();
+	o << " grade " << a.getGrade() << std::endl;
 	return (o);
 }
