@@ -27,12 +27,12 @@ class	AForm
 		AForm & operator=(AForm const & rhs); //copy assignment operator
 		virtual ~AForm(void); //destructor
 
-		std::string	getName(void) const;
-		int 	getGradeToSign(void) const;
-		int 	getGradeToExecute(void) const;
-		bool	getSigned(void) const;
-		void	beSigned(Bureaucrat &b);
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		std::string		getName(void) const;
+		int 			getGradeToSign(void) const;
+		int 			getGradeToExecute(void) const;
+		bool			getSigned(void) const;
+		void			beSigned(Bureaucrat &b);
+		virtual void 	execute(Bureaucrat const & executor) const = 0;
 
 		class GradeTooHighException : public std::exception
 		{

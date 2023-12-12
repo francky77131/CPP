@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 11:54:08 by frgojard          #+#    #+#             */
+/*   Updated: 2023/12/08 11:59:36 by frgojard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
@@ -14,7 +26,7 @@ class	ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs); //copy assignment operator
 		~ShrubberyCreationForm(void); //destructor
 		
-		void execute(Bureaucrat const & executor) const;
+		void	execute(Bureaucrat const & executor) const;
 	protected:
 	private:
 		ShrubberyCreationForm(void); //default constructor

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 11:53:58 by frgojard          #+#    #+#             */
+/*   Updated: 2023/12/08 11:59:31 by frgojard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
@@ -13,7 +25,7 @@ class	RobotomyRequestForm : public AForm
 		RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs); //copy assignment operator
 		~RobotomyRequestForm(void); //destructor
 
-		void execute(Bureaucrat const & executor) const;
+		void	execute(Bureaucrat const & executor) const;
 
 	protected:
 	private:

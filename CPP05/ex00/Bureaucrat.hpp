@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:06:30 by frgojard          #+#    #+#             */
-/*   Updated: 2023/11/24 14:33:09 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/12/08 11:56:57 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class	Bureaucrat
 		~Bureaucrat(void); //destructor
 
 		
-		int	getGrade(void) const;
+		int			getGrade(void) const;
 		std::string	getName(void) const;
-		void	incrementGrade(void);
-		void	decrementGrade(void);
+		void		incrementGrade(void);
+		void		decrementGrade(void);
 		
 		class GradeTooHighException : public std::exception
 		{

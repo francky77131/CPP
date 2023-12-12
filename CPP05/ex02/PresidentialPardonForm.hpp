@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 11:53:52 by frgojard          #+#    #+#             */
+/*   Updated: 2023/12/08 11:59:12 by frgojard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
@@ -13,12 +25,12 @@ class	PresidentialPardonForm : public AForm
 		PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs); //copy assignment operator
 		~PresidentialPardonForm(void); //destructor
 
-		void execute(Bureaucrat const & executor) const;
+		void	execute(Bureaucrat const & executor) const;
 
 	protected:
 	private:
 		PresidentialPardonForm(void); //default constructor
-		std::string _target;
+		std::string	_target;
 
 };
 

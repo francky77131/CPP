@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 11:54:20 by frgojard          #+#    #+#             */
+/*   Updated: 2023/12/12 17:42:24 by frgojard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy", 45, 72), _target(target)
@@ -28,7 +40,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	if (this->_signed == false || executor.getGrade() > this->_gradeToExecute)
 		throw CannotExecute();
 	// Utilisez time(nullptr) comme graine pour le générateur de nombres aléatoires
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
+    std::srand((unsigned) time(NULL));
     // Générez un nombre aléatoire
     int randomValue = std::rand();
 	if (randomValue % 2 == 0)
