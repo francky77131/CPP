@@ -7,6 +7,17 @@
 #include <exception>
 #include <typeinfo>
 
+#define RESET	"\033[0m"
+#define RED		"\033[31m"
+#define GREEN	"\033[32m"
+#define BLUE	"\033[34m"
+#define YELLOW	"\033[33m"
+#define PURPLE	"\033[35m"
+#define PINK		"\e[0;38;5;199m"
+#define LILAC		"\e[0;38;5;13m"
+#define BOLD_RED	"\e[1;31m"
+#define V_CYAN		"\e[0;38;5;44m"
+
 class	Base
 {
 	public:

@@ -18,32 +18,57 @@ Base * generate(void)
 void identify(Base* p)
 {
 	A*	first = dynamic_cast<A*>(p);
-	A*	secound = dynamic_cast<A*>(p);
-	A*	third = dynamic_cast<A*>(p);
+	B*	secound = dynamic_cast<B*>(p);
+	C*	third = dynamic_cast<C*>(p);
 
 	if (first != NULL)
 	{
-		std::cout << "type is A" << std::endl;
+		std::cout << "type is A." << std::endl;
 		return ;
 	}
 	else if (secound != NULL)
 	{
-		std::cout << "type is B" << std::endl;
+		std::cout << "type is B." << std::endl;
 		return ;
 	}
 	else if (third != NULL)
 	{
-		std::cout << "type is C" << std::endl;
+		std::cout << "type is C." << std::endl;
 		return ;
 	}
 	else
-		std::cout << "p is NULL" << std::endl;
+		std::cout << "p is NULL." << std::endl;
 	
 }
 
 void identify(Base& p)
 {
-
+	try
+	{
+		A& first = dynamic_cast<A&>(p);
+		std::cout << "type is A" << std::endl;
+		(void)first;
+	}
+	catch (std::exception & e)
+	{
+	}
+	try
+	{
+		B& secound = dynamic_cast<B&>(p);
+		std::cout << "type is B" << std::endl;
+		(void)secound;
+	}
+	catch (std::exception & e) {}
+	try
+	{
+		C& third = dynamic_cast<C&>(p);
+		std::cout << "type is C" << std::endl;
+		(void)third;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "bad cast" << std::endl;
+	}
 }
 
 Base::~Base(void)
