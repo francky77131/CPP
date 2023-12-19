@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialize.cpp                                      :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 14:24:35 by frgojard          #+#    #+#             */
-/*   Updated: 2023/12/12 15:34:56 by frgojard         ###   ########.fr       */
+/*   Updated: 2023/12/19 11:48:19 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialize.hpp"
+#include "Serializer.hpp"
 
-Serialize::Serialize(void)
+Serializer::Serializer(void)
 {
-	std::cout << "Serialize Default constructor called" << std::endl;
+	std::cout << "Serializer Default constructor called" << std::endl;
 	return ;
 }
 
-Serialize::Serialize(Serialize const & src)
+Serializer::Serializer(Serializer const & src)
 {
-	std::cout << "Serialize Copy constructor called" << std::endl;
+	std::cout << "Serializer Copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
-Serialize & Serialize::operator=(Serialize const & rhs)
+Serializer & Serializer::operator=(Serializer const & rhs)
 {
-	std::cout << "Serialize Copy assignment operator called" << std::endl;
+	std::cout << "Serializer Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
 
@@ -35,17 +35,17 @@ Serialize & Serialize::operator=(Serialize const & rhs)
 	return (*this);
 }
 
-uintptr_t Serialize::serialize(Data* ptr)
+uintptr_t Serializer::serialize(Data* ptr)
 {
 	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-Data* Serialize::deserialize(uintptr_t raw)
+Data* Serializer::deserialize(uintptr_t raw)
 {
 	return (reinterpret_cast<Data *>(raw));
 }
 
-Serialize::~Serialize(void)
+Serializer::~Serializer(void)
 {
 	std::cout << "Serialize Destructor called" << std::endl;
 	return ;

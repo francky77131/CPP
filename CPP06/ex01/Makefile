@@ -1,4 +1,4 @@
-NAME		= Serialize
+NAME		= Serializer
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,11 +6,11 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main Serialize
+FILES		= main Serializer
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Serialize.hpp
+HEADER		= Serializer.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m

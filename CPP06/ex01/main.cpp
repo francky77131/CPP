@@ -1,19 +1,13 @@
-#include "Serialize.hpp"
+#include "Serializer.hpp"
 
 int main()
 {
-	Data	type = {42};
-	Serialize	a;
+	Data		test = {42};
 
+	uintptr_t	ser = Serializer::serialize(&test);
+	std::cout << "Serialized adress : " << ser << std::endl;
 
-	uintptr_t	serialize = a.serialize(&type);
-	std::cout << "Serialized adress : " << serialize << std::endl;
-
-	Data *deserialize = a.deserialize(serialize);
-	std::cout << "DeSerialized adress : " << deserialize->i << std::endl;
-
-	serialize = a.serialize(&type);
-	std::cout << "Serialized adress : " << serialize << std::endl;
-
-	return 0;
+	Data*		test2 = Serializer::deserialize(ser);
+	std::cout << "Deserialised value : " << test2->i << std::endl;
+	return (0);
 }
