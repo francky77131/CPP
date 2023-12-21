@@ -23,21 +23,21 @@ void identify(Base* p)
 
 	if (first != NULL)
 	{
-		std::cout << "type is A." << std::endl;
+		std::cout << "pointer type is A." << std::endl;
 		return ;
 	}
 	else if (secound != NULL)
 	{
-		std::cout << "type is B." << std::endl;
+		std::cout << "pointer type is B." << std::endl;
 		return ;
 	}
 	else if (third != NULL)
 	{
-		std::cout << "type is C." << std::endl;
+		std::cout << "pointer type is C." << std::endl;
 		return ;
 	}
 	else
-		std::cout << "p is NULL." << std::endl;
+		std::cout << "pointer is NULL." << std::endl;
 	
 }
 
@@ -46,28 +46,32 @@ void identify(Base& p)
 	try
 	{
 		A& first = dynamic_cast<A&>(p);
-		std::cout << "type is A" << std::endl;
+		std::cout << "reference type is A" << std::endl;
 		(void)first;
 	}
 	catch (std::exception & e)
 	{
+		std::cout << "reference is not type A" << std::endl;
 	}
 	try
 	{
 		B& secound = dynamic_cast<B&>(p);
-		std::cout << "type is B" << std::endl;
+		std::cout << "reference type is B" << std::endl;
 		(void)secound;
 	}
-	catch (std::exception & e) {}
+	catch (std::exception & e)
+	{
+		std::cout << "reference is not type B" << std::endl;
+	}
 	try
 	{
 		C& third = dynamic_cast<C&>(p);
-		std::cout << "type is C" << std::endl;
+		std::cout << "reference type is C" << std::endl;
 		(void)third;
 	}
 	catch (std::exception & e)
 	{
-		std::cout << "bad cast" << std::endl;
+		std::cout << "reference is not type C" << std::endl;
 	}
 }
 
