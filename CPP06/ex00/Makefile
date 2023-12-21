@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/21 10:50:48 by frgojard          #+#    #+#              #
-#    Updated: 2023/12/21 10:50:49 by frgojard         ###   ########.fr        #
+#    Created: 2023/12/21 10:50:38 by frgojard          #+#    #+#              #
+#    Updated: 2023/12/21 10:50:39 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Serializer
+NAME		= convert
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -18,11 +18,11 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main Serializer
+FILES		= main ScalarConverter
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Serializer.hpp
+HEADER		= ScalarConverter.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m
