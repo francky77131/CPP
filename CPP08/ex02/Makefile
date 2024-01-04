@@ -10,7 +10,7 @@ FILES		= main
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= whatever.hpp
+HEADER		= MutantStack.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m
